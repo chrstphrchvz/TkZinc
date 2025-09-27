@@ -133,7 +133,7 @@ if test "${TEA_PLATFORM}" = "windows" ; then
     TEA_ADD_SOURCES([WinPort.c])
 elif test "${TEA_WINDOWINGSYSTEM}" = "aqua" ; then
     CLEANFILES="pkgIndex.tcl"
-    TEA_ADD_SOURCES([macosx/OSXPort.c])
+    #TEA_ADD_SOURCES([macosx/OSXPort.c])
 else
     CLEANFILES="pkgIndex.tcl"
 fi

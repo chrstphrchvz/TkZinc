@@ -283,6 +283,7 @@ WindowCaptureExternalWindow(ZnItem item)
       WindowResizeExternalWindow(item, wind->real_width, wind->real_height);
    }
 
+#elif defined(MAC_OSX_TK)
 #else
    /* Try to find a window matching windowtitle */
    Window externalWindow = SearchWindowByTitle(wind->windowtitle, wi->dpy, RootWindowOfScreen(wi->screen), 0);
@@ -336,6 +337,7 @@ WindowReleaseExternalWindow(ZnItem item)
        SetParent(wind->externalwindow, NULL);
    }
 
+#elif defined(MAC_OSX_TK)
 #else
    /* Test if we must release an external window */
    if (wind->externalwindow != 0) {

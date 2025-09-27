@@ -14,6 +14,7 @@
 /* Windows */
 #include <windows.h>
 
+#elif defined(MAC_OSX_TK)
 #else
 /* Linux */
 #include <X11/Xlib.h>
@@ -58,6 +59,7 @@ LONG removeWindowDecoration(HWND window);
 
 
 
+#elif defined(MAC_OSX_TK)
 #else 
 
 

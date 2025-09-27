@@ -186,12 +186,23 @@ TkRegion ZnPolygonRegion(XPoint *points, int n,
 
 #elif defined(MAC_OSX_TK)
 
+#if 0
 ZnBool ZnPointInRegion(TkRegion reg, int x, int y);
 void ZnUnionRegion(TkRegion sra, TkRegion srb, 
                    TkRegion dr_return);
 void ZnOffsetRegion(TkRegion reg, int dx, int dy);
 TkRegion ZnPolygonRegion(XPoint *points, int n,
                          int fill_rule);
+#else
+#  define ZnPointInRegion(reg, x, y) \
+  XPointInRegion((void *) reg, x, y)
+#  define ZnPolygonRegion(points, npoints, fillrule) \
+  ((TkRegion) XPolygonRegion(points, npoints, fillrule))
+#  define ZnUnionRegion(sra, srb, rreturn) \
+  XUnionRegion((void *) sra, (void *) srb, (void *) rreturn)
+#  define ZnOffsetRegion(reg, dx, dy) \
+  XOffsetRegion((void *) reg, dx, dy)
+#endif
 #  ifdef GL
 #    define ZnGLContext AGLContext
 #    define ZnGLWaitX()
