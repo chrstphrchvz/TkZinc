@@ -40,7 +40,7 @@
 #  else
 #    ifdef MAC_OSX_TK
 #      include <AGL/agl.h>
-#      include <AGL/glu.h>
+#      include <OpenGL/glu.h>
 #    else
 #      include <GL/glx.h>
 #    endif

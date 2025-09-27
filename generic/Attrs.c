@@ -23,7 +23,7 @@
 #include "WidgetInfo.h"
 
 #if defined(MAC_OSX_TK)
-  #include <AGL/glu.h>
+  #include <OpenGL/glu.h>
 #else
   #include <GL/glu.h>
 #endif
