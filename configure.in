@@ -33,7 +33,7 @@ AC_INIT([Tkzinc], [3.3.7])
 #
 # Keep it here we will need ${TEA_PLATFORM} soon.
 #--------------------------------------------------------------------
-TEA_INIT([3.5])
+TEA_INIT([3.9])
 
 #-----------------------------------------------------------------------
 # Setup the CONFIGDIR to the path of the directory containing the
